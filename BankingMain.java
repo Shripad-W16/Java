@@ -6,10 +6,13 @@ abstract class AdvancedBankingSystem {
 
     
     public AdvancedBankingSystem(double initialBalance) {
-        if (initialBalance >= 0) {
+        if (initialBalance >= 0)
+        {
             this.balance = initialBalance;
-        } else {
-            System.out.println("❌ Initial balance cannot be negative. Setting balance to $0.");
+        } else 
+        
+        {
+            System.out.println("Initial balance cannot be negative. Setting balance to $0.");
             this.balance = 0;
         }
     }
@@ -20,7 +23,7 @@ abstract class AdvancedBankingSystem {
 
     
     public void checkBalance() {
-        System.out.println("💰 Current Balance: $" + balance);
+        System.out.println( Current Balance: $" + balance);
     }
 
     
@@ -46,9 +49,9 @@ class SavingsAccount extends AdvancedBankingSystem {
     public void deposit(double amount) {
         if (amount > 0) {
             setBalance(getBalance() + amount);
-            System.out.println("✅ Deposited: $" + amount);
+            System.out.println("Deposited: Rs. + amount);
         } else {
-            System.out.println("❌ Invalid deposit amount.");
+            System.out.println(" Invalid deposit amount.");
         }
     }
 
@@ -57,11 +60,11 @@ class SavingsAccount extends AdvancedBankingSystem {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= getBalance()) {
             setBalance(getBalance() - amount);
-            System.out.println("✅ Withdrawn: $" + amount);
+            System.out.println(" Withdrawn: $" + amount);
         } else if (amount > getBalance()) {
-            System.out.println("❌ Insufficient funds. Available balance: $" + getBalance());
+            System.out.println(" Insufficient funds. Available balance: $" + getBalance());
         } else {
-            System.out.println("❌ Invalid amount. Enter a positive number.");
+            System.out.println(" Invalid amount. Enter a positive number.");
         }
     }
 }
@@ -74,7 +77,7 @@ public class BankingMain {
         
         System.out.print("Enter initial balance: ");
         while (!scanner.hasNextDouble()) {
-            System.out.println("❌ Invalid input. Please enter a valid amount.");
+            System.out.println(" Invalid input. Please enter a valid amount.");
             scanner.next();
         }
         double initialBalance = scanner.nextDouble();
@@ -84,24 +87,23 @@ public class BankingMain {
 
         while (true) {
             
-            System.out.println("\n📌 Banking Menu");
-            System.out.println("1️⃣ Deposit");
-            System.out.println("2️⃣ Withdraw");
-            System.out.println("3️⃣ Check Balance");
-            System.out.println("4️⃣ Exit");
+            System.out.println("\n Banking Menu");
+            System.out.println("1 Deposit");
+            System.out.println("2 Withdraw");
+            System.out.println("3️ Check Balance");
+            System.out.println("4️ Exit");
             System.out.print("Enter your choice: ");
 
             while (!scanner.hasNextInt()) {
-                System.out.println("❌ Invalid input. Please enter a number (1-4).");
-                scanner.next();
-            }
+                System.out.println(" Invalid input. Please enter a number (1-4).");
+                scanner.next(); }
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
                     System.out.print("Enter deposit amount: ");
                     while (!scanner.hasNextDouble()) {
-                        System.out.println("❌ Invalid input. Enter a valid amount.");
+                        System.out.println(" Invalid input. Enter a valid amount.");
                         scanner.next();
                     }
                     double depositAmount = scanner.nextDouble();
@@ -110,7 +112,7 @@ public class BankingMain {
                 case 2:
                     System.out.print("Enter withdrawal amount: ");
                     while (!scanner.hasNextDouble()) {
-                        System.out.println("❌ Invalid input. Enter a valid amount.");
+                        System.out.println(" Invalid input. Enter a valid amount.");
                         scanner.next();
                     }
                     double withdrawAmount = scanner.nextDouble();
@@ -120,12 +122,12 @@ public class BankingMain {
                     account.checkBalance();
                     break;
                 case 4:
-                    System.out.println("🚀 Exiting... Thank you for banking with us!");
+                    System.out.println(" Exiting... Thank you for using Shripad's banking Software!");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("❌ Invalid choice. Please select a valid option.");
+                    System.out.println(" Invalid choice. Please select a valid option.");
             }
         }
-    }
+    } 
 }
